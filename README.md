@@ -11,4 +11,8 @@ Header Fix is a utility tool designed to standardize and fix header implementati
 
 ## Installation
 ```bash
-npm install header-fix
+git clone https://github.com/snail2sky/header-fix.git
+
+# Open chrome -> Open extensions -> Open management extensions -> Open developer mode
+# Click on my extension -> drag and drop this project directory in
+```
