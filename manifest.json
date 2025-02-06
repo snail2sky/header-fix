@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "Header Modifier",
+  "version": "1.0",
+  "description": "Modify HTTP request headers for all requests",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "storage",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_popup": "popup.html"
+  }
+}

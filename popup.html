@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Header Modifier</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #4a90e2;
+      --background-color: #f4f4f4;
+      --text-color: #333;
+      --border-radius: 8px;
+    }
+
+    body {
+      width: 400px;
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--background-color);
+      margin: 0;
+      padding: 20px;
+      color: var(--text-color);
+    }
+
+    .container {
+      background-color: white;
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .header-row {
+      display: flex;
+      margin-bottom: 15px;
+      align-items: center;
+    }
+
+    .header-row input {
+      flex-grow: 1;
+      padding: 10px;
+      margin-right: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      transition: border-color 0.3s ease;
+    }
+
+    .header-row input:focus {
+      outline: none;
+      border-color: var(--primary-color);
+    }
+
+    .remove-header {
+      background-color: #ff6b6b;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .remove-header:hover {
+      background-color: #ff5252;
+    }
+
+    #addHeaderBtn, #saveButton {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #addHeaderBtn:hover, #saveButton:hover {
+      background-color: #357abd;
+    }
+
+    #toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px 20px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    #toast.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>HTTP Header Modifier</h2>
+    <div id="headersContainer">
+      <div class="header-row">
+        <input type="text" class="header-name" placeholder="Header Name">
+        <input type="text" class="header-value" placeholder="Header Value">
+        <button class="remove-header">-</button>
+      </div>
+    </div>
+    <button id="addHeaderBtn">+ 添加请求头</button>
+    <button id="saveButton">保存修改</button>
+  </div>
+  <div id="toast"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
